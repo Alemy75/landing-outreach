@@ -1,0 +1,12 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Проверка адаптивности</title><style>body{margin:0;background:#dedcda;display:grid;justify-content:center}iframe{display:block;border:0;width:375px;height:812px;background:#f5f5f5}pre{max-width:90vw;white-space:pre-wrap;font:12px monospace}</style><iframe title="Адаптивная версия" src="../"></iframe><pre id="report">Загрузка…</pre><script>
+const frame=document.querySelector('iframe');
+frame.src='../landings/profi-atelier/';
+const width=Number(new URLSearchParams(location.search).get('width')||375);
+frame.style.width=width+'px';
+frame.addEventListener('load',async()=>{
+const d=frame.contentDocument,w=frame.contentWindow;await d.fonts.ready;
+const h=d.querySelector('h1'),heroButton=d.querySelector('.hero .button');
+const overflow=[...d.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&(r.right>d.documentElement.clientWidth+1||r.left< -1)&&!e.classList.contains('skip-link')&&!e.closest('#catalog-items')}).map(e=>e.tagName+'.'+e.className);
+document.querySelector('#report').textContent=JSON.stringify({viewport:width,clientWidth:d.documentElement.clientWidth,scrollWidth:d.documentElement.scrollWidth,overflow,h1Lines:Math.round(h.getBoundingClientRect().height/parseFloat(w.getComputedStyle(h).lineHeight)),heroButtonVisible:heroButton.getBoundingClientRect().bottom<812,h1Count:d.querySelectorAll('h1').length,fonts:d.fonts.status,localBusiness:JSON.parse(d.querySelector('[type="application/ld+json"]').textContent)['@type']},null,2);
+});
+</script></html>

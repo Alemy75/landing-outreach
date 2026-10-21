@@ -1,0 +1,11 @@
+{
+  "name": "landing-outreach",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Демо лендингов для локального бизнеса",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "prepare:seo": "node landings/profi-atelier/tools/prepare-seo.mjs"
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alemy75.github.io/landing-outreach/landings/profi-atelier/sitemap.xml

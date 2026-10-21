@@ -1,0 +1,13 @@
+/outputs/
+/images/
+/companies.md
+/profi-services.md
+/design-systen.md
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
