@@ -55,8 +55,9 @@ h1{font-size:32px;line-height:1.08;letter-spacing:-.6px;max-width:none;text-wrap
 .button-outline:hover{background:var(--surface-strong)}
 .text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;font-weight:500;min-height:44px}
 .text-link span,.button span{font-size:18px;font-weight:400}
-.ui-arrow{display:inline-block;width:18px;height:18px;flex-shrink:0;vertical-align:middle}
-.text-link>span:has(.ui-arrow),.button>span:has(.ui-arrow),.hero-caption a>span:has(.ui-arrow),.footer-grid>a>span:has(.ui-arrow){display:inline-flex;align-items:center;line-height:0}
+.ui-arrow{display:block;width:14px;height:14px;flex:0 0 14px;color:inherit;stroke:currentColor;vertical-align:middle}
+.button-primary .ui-arrow{color:var(--surface);stroke:var(--surface)}
+.text-link>span:has(.ui-arrow),.button>span:has(.ui-arrow),.hero-caption a>span:has(.ui-arrow),.footer-grid>a>span:has(.ui-arrow){display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;flex:0 0 14px;line-height:0}
 .hero-figure{overflow:hidden;border-radius:var(--radius);background:var(--surface-strong)}
 .hero-image{aspect-ratio:1.12;object-fit:cover;object-position:50% 40%}
 .location-strip{display:grid;gap:20px;padding-block:24px;border-block:1px solid var(--hairline)}

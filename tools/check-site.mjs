@@ -7,7 +7,7 @@ for(const file of ['index.html','landings/profi-atelier/index.html']) {
   const html=await fs.readFile(path.join(root,file),'utf8');
   for(const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
     if(/^(?:https?:|tel:|mailto:|data:)/.test(match[1])) continue;
-    let target=path.resolve(root,path.dirname(file),match[1].split('#')[0]);
+    let target=path.resolve(root,path.dirname(file),match[1].split(/[?#]/)[0]);
     if(match[1].endsWith('/'))target=path.join(target,'index.html');
     await fs.access(target); checked++;
   }
