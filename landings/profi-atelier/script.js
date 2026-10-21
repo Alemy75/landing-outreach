@@ -214,3 +214,69 @@ reducedMotion.addEventListener('change', (event) => {
     revealTargets.forEach(show);
   }
 });
+
+// Ease discrete mouse-wheel steps without replacing native touch/trackpad gestures.
+(() => {
+  let frame = 0;
+  let destination = window.scrollY;
+  let origin = destination;
+  let started = 0;
+  const duration = 700;
+  const html = document.documentElement;
+  const limit = () => Math.max(0, html.scrollHeight - window.innerHeight);
+  const stop = () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    destination = window.scrollY;
+    html.classList.remove('is-smooth-scrolling');
+  };
+  const animate = now => {
+    const progress = Math.min(1, (now - started) / duration);
+    const end = Math.min(limit(), Math.max(0, destination));
+    const position = origin + (end - origin) * (1 - (1 - progress) ** 4);
+    window.scrollTo({top: position, behavior: 'instant'});
+    if (progress < 1 && Math.abs(end - window.scrollY) > .5) {
+      frame = requestAnimationFrame(animate);
+    } else {
+      window.scrollTo({top: end, behavior: 'instant'});
+      stop();
+    }
+  };
+  const nestedScroll = (target, delta) => {
+    for (let node = target instanceof Element ? target : null; node && node !== document.body; node = node.parentElement) {
+      if (node.scrollHeight <= node.clientHeight + 1) continue;
+      if (!/(auto|scroll)/.test(getComputedStyle(node).overflowY)) continue;
+      if (delta < 0 ? node.scrollTop > 0 : node.scrollTop + node.clientHeight < node.scrollHeight - 1) return true;
+    }
+    return false;
+  };
+  window.addEventListener('wheel', event => {
+    if (event.defaultPrevented || event.ctrlKey || event.metaKey || reducedMotion.matches ||
+        Math.abs(event.deltaX) >= Math.abs(event.deltaY) || !event.deltaY) return;
+    // Precision trackpads already supply a smooth stream with native momentum.
+    if (event.deltaMode === 0 && Math.abs(event.deltaY) < 50) { stop(); return; }
+    if (nestedScroll(event.target, event.deltaY)) { stop(); return; }
+    const pixels = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1);
+    const step = Math.sign(pixels) * Math.min(Math.abs(pixels) * .7, 280);
+    const current = window.scrollY;
+    // Reverse direction immediately instead of first exhausting old momentum.
+    if (!frame || Math.sign(step) !== Math.sign(destination - current)) destination = current;
+    const next = Math.max(0, Math.min(limit(), destination + step));
+    if (next === current && !frame) return;
+    event.preventDefault();
+    cancelAnimationFrame(frame);
+    origin = current;
+    destination = next;
+    started = performance.now();
+    html.classList.add('is-smooth-scrolling');
+    frame = requestAnimationFrame(animate);
+  }, {passive: false});
+  window.addEventListener('pointerdown', stop, {passive: true});
+  window.addEventListener('touchstart', stop, {passive: true});
+  window.addEventListener('keydown', event => {
+    if (['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' ','Escape','Tab'].includes(event.key)) stop();
+  });
+  window.addEventListener('blur', stop);
+  window.addEventListener('pagehide', stop);
+  reducedMotion.addEventListener('change', stop);
+})();
