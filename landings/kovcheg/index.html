@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ковчег — ветеринарные клиники в Ярославле | Московский проспект и улица Калинина</title>
+  <meta name="description" content="Ветеринарные клиники «Ковчег» и «КовчегВет» в Ярославле: Московский проспект, 82 и улица Калинина, 17. Телефоны филиалов, маршруты, услуги и отзывы посетителей." />
+  <meta name="keywords" content="ветеринарная клиника Ярославль, Ковчег ветклиника, КовчегВет, ветеринар Московский проспект 82, ветеринар Калинина 17" />
+  <meta property="og:title" content="Ковчег — ветеринарные клиники в Ярославле" />
+  <meta property="og:description" content="Два адреса в Ярославле: Московский проспект, 82 и улица Калинина, 17. Выберите клинику и свяжитесь с ней напрямую." />
+  <meta property="og:image" content="images/hero-background-v3.webp" />
+  <meta name="theme-color" content="#304340" />
+  <link rel="icon" type="image/webp" href="images/kovcheg-logo.webp" />
+  <link rel="preload" as="image" href="images/hero-background-v3.webp" media="(min-width: 601px)" />
+  <link rel="preload" as="image" href="images/hero-background-mobile-v2.webp" media="(max-width: 600px)" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide-core.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.classList.add('has-js');
+    (() => {
+      const hideLoader = () => document.getElementById('page-loader')?.classList.add('is-hidden');
+      window.addEventListener('load', async () => {
+        const hero = new Image();
+        hero.src = matchMedia('(max-width: 600px)').matches
+          ? 'images/hero-background-mobile-v2.webp'
+          : 'images/hero-background-v3.webp';
+        await Promise.race([
+          Promise.all([document.fonts?.ready ?? Promise.resolve(), hero.decode?.().catch(() => {}) ?? Promise.resolve()]),
+          new Promise(resolve => setTimeout(resolve, 2500))
+        ]);
+        requestAnimationFrame(() => requestAnimationFrame(hideLoader));
+      }, { once: true });
+      setTimeout(() => {
+        if (document.getElementById('page-loader')) hideLoader();
+        else document.addEventListener('DOMContentLoaded', hideLoader, { once: true });
+      }, 8500);
+    })();
+  </script>
+  <noscript><style>.page-loader{display:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"VeterinaryCare","name":"Ковчег","description":"Ветеринарная клиника в Ярославле.","address":{"@type":"PostalAddress","streetAddress":"Московский проспект, 82","addressLocality":"Ярославль","addressCountry":"RU"},"telephone":"+7-4852-59-55-41","hasMap":"https://yandex.ru/maps/org/kovcheg/122037647007/"},
+      {"@type":"VeterinaryCare","name":"КовчегВет","description":"Ветеринарная клиника в Ярославле.","address":{"@type":"PostalAddress","streetAddress":"улица Калинина, 17","addressLocality":"Ярославль","addressCountry":"RU"},"telephone":"+7-4852-90-80-85","hasMap":"https://yandex.ru/maps/org/kovchegvet/172930155866/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page-loader" id="page-loader" role="status" aria-label="Загрузка сайта">
+    <img src="images/kovcheg-logo.webp" alt="Ковчег — ветеринарная клиника" />
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="brand" href="#top" aria-label="Ковчег — на главную"><img class="brand-logo" src="images/kovcheg-logo.webp" alt="Ковчег — ветеринарная клиника" /></a>
+    <nav class="nav-links" id="primary-navigation" aria-label="Основная навигация">
+      <a href="#care">Услуги</a>
+      <a href="#space">Фото клиник</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Филиалы</a>
+      <a class="mobile-nav-contact" href="#contacts">Связаться с нами <i data-lucide="message-circle" aria-hidden="true"></i></a>
+    </nav>
+    <a class="nav-contact" href="#contacts" aria-label="Связаться с нами"><span>Связаться с нами</span><i data-lucide="message-circle" aria-hidden="true"></i></a>
+    <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Открыть меню"><i class="icon-open" data-lucide="menu" aria-hidden="true"></i><i class="icon-close" data-lucide="x" aria-hidden="true"></i></button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Ветеринарная клиника Ковчег">
+      <div class="hero-inner shell">
+        <div class="hero-copy reveal">
+          <h1>Место, где<br /><em>становится легче.</em></h1>
+          <p class="hero-lead">Ветеринарные клиники «Ковчег» в Ярославле. Выберите удобный адрес — на Московском проспекте или улице Калинина.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#contacts">Выбрать клинику <i data-lucide="map-pin" aria-hidden="true"></i></a></div>
+          <div class="trust-line"><i data-lucide="heart" aria-hidden="true"></i> Бережно относимся к каждому пациенту</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Услуги и направления клиники">
+      <div class="ticker-viewport">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <button class="ticker-item" type="button" data-description="Осмотр питомца и рекомендации ветеринара.">Приём <i data-lucide="stethoscope" aria-hidden="true"></i></button>
+            <button class="ticker-item" type="button" data-description="Прививки для животных. Запись уточняйте по телефону.">Вакцинация <i data-lucide="syringe" aria-hidden="true"></i></button>
+            <button class="ticker-item" type="button" data-description="Подготовку и проведение операции обсудите с врачом.">Стерилизация <i data-lucide="heart-pulse" aria-hidden="true"></i></button>
+            <button class="ticker-item" type="button" data-description="Консультация по операции и уходу за питомцем.">Кастрация <i data-lucide="cross" aria-hidden="true"></i></button>
+            <button class="ticker-item" type="button" data-description="Ветеринарные препараты и товары для животных.">Ветаптека <i data-lucide="pill" aria-hidden="true"></i></button>
+            <button class="ticker-item" type="button" data-description="Товары для питомцев. Наличие уточняйте в клинике.">Зоомагазин <i data-lucide="shopping-bag" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="ticker-tooltip" id="ticker-tooltip" role="tooltip" hidden></div>
+    </section>
+    <section id="care" class="services-section" aria-labelledby="services-title">
+      <div class="flow-divider flow-light services-flow services-flow-top" aria-hidden="true"><svg viewBox="0 0 1440 150" preserveAspectRatio="none"><path class="flow-path flow-path-a" d="M-40 92 C 180 18, 290 132, 510 69 S 860 19, 1080 84 S 1320 138, 1480 56"/><path class="flow-path flow-path-b" d="M-40 115 C 190 56, 330 156, 560 93 S 875 47, 1100 105 S 1320 156, 1480 82"/></svg></div>
+      <div class="services-layout shell">
+        <header class="services-intro reveal">
+          <p class="eyebrow">Услуги</p>
+          <h2 id="services-title">Всё важное<br /><em>в одном месте.</em></h2>
+          <p>В «Ковчеге» доступны ветеринарные услуги, аптека и зоосалон. Наличие конкретной услуги уточняйте в выбранном филиале.</p>
+          <a class="services-contact" href="#contacts">Выбрать филиал <i data-lucide="map-pin" aria-hidden="true"></i></a>
+        </header>
+        <div class="services-list">
+          <article class="service-row reveal">
+            <span class="service-icon"><i data-lucide="stethoscope" aria-hidden="true"></i></span>
+            <div><h3>Ветеринарная клиника</h3><p>Приём, диагностика и лечение питомцев. Также доступны вакцинация, стерилизация и кастрация.</p></div>
+          </article>
+          <article class="service-row reveal delay-1">
+            <span class="service-icon"><i data-lucide="pill" aria-hidden="true"></i></span>
+            <div><h3>Ветеринарная аптека</h3><p>Ветеринарные препараты и товары для животных. Наличие уточняйте по телефону.</p></div>
+          </article>
+          <article class="service-row reveal delay-2">
+            <span class="service-icon"><i data-lucide="scissors" aria-hidden="true"></i></span>
+            <div><h3>Зоосалон</h3><p>Уход за питомцами.</p></div>
+          </article>
+        </div>
+      </div>
+      <div class="flow-divider flow-light services-flow services-flow-bottom" aria-hidden="true"><svg viewBox="0 0 1440 150" preserveAspectRatio="none"><path class="flow-path flow-path-a" d="M-40 84 C 170 156, 320 4, 540 76 S 880 136, 1100 62 S 1320 22, 1480 97"/><path class="flow-path flow-path-b" d="M-40 112 C 190 168, 345 36, 570 104 S 880 153, 1110 88 S 1320 45, 1480 120"/></svg></div>
+    </section>
+
+    <section id="space" class="space-section" aria-labelledby="space-title">
+      <div class="shell gallery-heading reveal">
+        <div><p class="eyebrow light">Наши клиники</p><h2 id="space-title">Посмотрите на <em>«Ковчег».</em></h2></div>
+      </div>
+      <div class="shell branch-collage-wrap reveal delay-1">
+        <div class="branch-collage-tabs" role="tablist" aria-label="Филиал клиники">
+          <button id="branch-tab-moskovsky" class="branch-collage-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="branch-panel-moskovsky" tabindex="0" data-branch-tab="moskovsky">Московский проспект, 82</button>
+          <button id="branch-tab-kalinina" class="branch-collage-tab" type="button" role="tab" aria-selected="false" aria-controls="branch-panel-kalinina" tabindex="-1" data-branch-tab="kalinina">Улица Калинина, 17</button>
+        </div>
+        <div id="branch-panel-moskovsky" class="branch-collage-panel is-visible" role="tabpanel" aria-labelledby="branch-tab-moskovsky">
+          <div class="branch-collage-grid">
+            <figure class="branch-collage-tile branch-collage-feature"><img src="images/photo-1.webp" alt="Вход в клинику Ковчег на Московском проспекте, 82" loading="lazy" /><figcaption>Вход в клинику</figcaption></figure>
+            <figure class="branch-collage-tile"><img src="images/moskovsky-candidate-06.webp" alt="Команда клиники Ковчег на Московском проспекте" loading="lazy" /><figcaption>Команда клиники</figcaption></figure>
+            <figure class="branch-collage-tile branch-collage-patient"><img src="images/photo-2.webp" alt="Ветеринар осматривает кота в филиале на Московском проспекте" loading="lazy" /><figcaption>Приём питомца</figcaption></figure>
+            <figure class="branch-collage-tile branch-collage-patient"><img src="images/moskovsky-candidate-04.webp" alt="Котёнок в филиале Ковчега на Московском проспекте" loading="lazy" /><figcaption>Маленький пациент</figcaption></figure>
+            <figure class="branch-collage-tile branch-collage-patient"><img src="images/moskovsky-10.webp" alt="Кот в филиале Ковчега на Московском проспекте" loading="lazy" /><figcaption>Наши посетители</figcaption></figure>
+          </div>
+          <div class="branch-collage-meta"><span>5 фотографий · Московский проспект, 82</span><a href="https://yandex.ru/maps/org/kovcheg/122037647007/gallery/" target="_blank" rel="noopener">Больше фото в Яндекс Картах <i data-lucide="external-link" aria-hidden="true"></i></a></div>
+        </div>
+        <div id="branch-panel-kalinina" class="branch-collage-panel" role="tabpanel" aria-labelledby="branch-tab-kalinina" hidden>
+          <div class="branch-collage-grid">
+            <figure class="branch-collage-tile branch-collage-feature"><img src="images/kalinina-candidate-06.webp" alt="Здание клиники КовчегВет на улице Калинина, 17" loading="lazy" /><figcaption>Филиал на Калинина</figcaption></figure>
+            <figure class="branch-collage-tile"><img src="images/kalinina-1.webp" alt="Кабинет филиала КовчегВет на улице Калинина" loading="lazy" /><figcaption>Кабинет</figcaption></figure>
+            <figure class="branch-collage-tile"><img src="images/kalinina-2.webp" alt="Аппарат УЗИ в филиале КовчегВет на улице Калинина" loading="lazy" /><figcaption>Оборудование для УЗИ</figcaption></figure>
+            <figure class="branch-collage-tile"><img src="images/kalinina-10.webp" alt="Зоомагазин в филиале КовчегВет на улице Калинина" loading="lazy" /><figcaption>Зоомагазин</figcaption></figure>
+            <figure class="branch-collage-tile"><img src="images/kalinina-candidate-03.webp" alt="Рабочее место в филиале КовчегВет на улице Калинина" loading="lazy" /><figcaption>Внутри клиники</figcaption></figure>
+          </div>
+          <div class="branch-collage-meta"><span>5 фотографий · улица Калинина, 17</span><a href="https://yandex.ru/maps/org/kovchegvet/172930155866/gallery/" target="_blank" rel="noopener">Больше фото в Яндекс Картах <i data-lucide="external-link" aria-hidden="true"></i></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews-section" aria-labelledby="reviews-title">
+      <div class="shell">
+        <div class="reviews-heading reveal">
+          <div><p class="eyebrow">Отзывы</p><h2 id="reviews-title">Говорят<br /><em>посетители.</em></h2></div>
+          <p>Фрагменты отзывов о двух филиалах. Звёзды показывают рейтинг филиала на Яндекс Картах; ссылки ведут к источникам.</p>
+        </div>
+        <div id="reviews-slider" class="reviews-slider splide" role="group" aria-label="Отзывы посетителей клиник Ковчег">
+          <div class="splide__track"><ul class="splide__list">
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:94%" role="img" aria-label="Рейтинг филиала 4,7 из 5">★★★★★</span><span>4,7 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Понравилось отношение врачей, все разъяснили, рекомендовали сделать предварительное узи сердца, дали подробную информацию по послеоперационному уходу.»</blockquote>
+              <figcaption><strong>Дарья К.</strong><span>Московский проспект, 82</span><a href="https://yandex.ru/maps/org/kovcheg/122037647007/reviews/" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:98%" role="img" aria-label="Рейтинг филиала 4,9 из 5">★★★★★</span><span>4,9 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Внутри ветклиники очень чисто, уютненько.»</blockquote>
+              <figcaption><strong>Екатерина Титова</strong><span>Улица Калинина, 17</span><a href="https://yandex.ru/maps/org/kovchegvet/172930155866/reviews/" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:94%" role="img" aria-label="Рейтинг филиала 4,7 из 5">★★★★★</span><span>4,7 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Кошечка боялась, доктор успокаивала её, обращалась очень нежно.»</blockquote>
+              <figcaption><strong>Алёна Кузнецова</strong><span>Московский проспект, 82</span><a href="https://kovcheg-moskovskij-prospekt.clients.site/#reviews" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:98%" role="img" aria-label="Рейтинг филиала 4,9 из 5">★★★★★</span><span>4,9 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Спасибо огромное за внимательное и доброе отношение.»</blockquote>
+              <figcaption><strong>Илья Филатов</strong><span>Улица Калинина, 17</span><a href="https://yandex.ru/maps/org/kovchegvet/172930155866/reviews/" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:94%" role="img" aria-label="Рейтинг филиала 4,7 из 5">★★★★★</span><span>4,7 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Добрые, внимательные профессионалы... Спасибо...»</blockquote>
+              <figcaption><strong>Светлана</strong><span>Московский проспект, 82</span><a href="https://kovcheg-moskovskij-prospekt.clients.site/#reviews" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:98%" role="img" aria-label="Рейтинг филиала 4,9 из 5">★★★★★</span><span>4,9 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Большое спасибо специалистам.»</blockquote>
+              <figcaption><strong>Наталья Глазкова</strong><span>Улица Калинина, 17</span><a href="https://yandex.ru/maps/org/kovchegvet/172930155866/reviews/" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+            <li class="splide__slide"><figure class="review-card">
+              <div class="review-rating"><span class="review-stars" style="--star-fill:94%" role="img" aria-label="Рейтинг филиала 4,7 из 5">★★★★★</span><span>4,7 / 5 · рейтинг филиала</span></div>
+              <blockquote>«Рекомендую! Работают профи»</blockquote>
+              <figcaption><strong>Оксана Леснова</strong><span>Московский проспект, 82</span><a href="https://kovcheg-moskovskij-prospekt.clients.site/#reviews" target="_blank" rel="noopener">Читать отзыв <i data-lucide="external-link" aria-hidden="true"></i></a></figcaption>
+            </figure></li>
+          </ul></div>
+          <div class="reviews-controls"><div class="splide__arrows"><button class="splide__arrow splide__arrow--prev" type="button" aria-label="Предыдущие отзывы"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button class="splide__arrow splide__arrow--next" type="button" aria-label="Следующие отзывы"><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ul class="splide__pagination"></ul></div>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="contact-section" aria-labelledby="contacts-title">
+      <img class="contact-pets" src="images/contact-cat-vertical.webp" alt="" loading="lazy" width="1024" height="1536" />
+      <div class="branches-inner shell">
+        <div class="branches-heading reveal"><p class="eyebrow">Филиалы</p><h2 id="contacts-title">Выберите<br /><em>свой «Ковчег».</em></h2><p>Два адреса в Ярославле. Свяжитесь с нужным филиалом напрямую и уточните время приёма.</p></div>
+        <div class="branches-grid">
+          <article class="branch-card reveal" aria-labelledby="branch-moscow-title">
+            <span class="branch-number">Ярославль</span><h3 id="branch-moscow-title">Московский проспект, 82</h3><p>Ветеринарная клиника «Ковчег»</p>
+            <div class="branch-actions">
+            <a class="branch-phone" href="tel:+74852595541">+7 (4852) 59-55-41 <i data-lucide="phone" aria-hidden="true"></i></a>
+            <a class="branch-map" href="https://yandex.ru/maps/org/kovcheg/122037647007/" target="_blank" rel="noopener">Адрес и часы работы на карте <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="branch-card reveal delay-1" aria-labelledby="branch-kalinina-title">
+            <span class="branch-number">Ярославль</span><h3 id="branch-kalinina-title">Улица Калинина, 17</h3><p>Ветеринарная клиника «КовчегВет»</p>
+            <div class="branch-actions">
+            <a class="branch-phone" href="tel:+74852908085">+7 (4852) 90-80-85 <i data-lucide="phone" aria-hidden="true"></i></a>
+            <a class="branch-map" href="https://yandex.ru/maps/org/kovchegvet/172930155866/" target="_blank" rel="noopener">Адрес и часы работы на карте <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner">
+    <div class="footer-brand"><a class="brand" href="#top"><img class="brand-logo" src="images/kovcheg-logo.webp" alt="Ковчег — ветеринарные клиники" /></a><p>Ветеринарные клиники в Ярославле</p></div>
+    <div class="footer-branch"><strong>Ковчег</strong><span>Московский проспект, 82</span><a href="tel:+74852595541">+7 (4852) 59-55-41</a><a href="https://yandex.ru/maps/org/kovcheg/122037647007/" target="_blank" rel="noopener">Адрес и график работы <i data-lucide="external-link" aria-hidden="true"></i></a></div>
+    <div class="footer-branch"><strong>КовчегВет</strong><span>Улица Калинина, 17</span><a href="tel:+74852908085">+7 (4852) 90-80-85</a><a href="https://yandex.ru/maps/org/kovchegvet/172930155866/" target="_blank" rel="noopener">Адрес и график работы <i data-lucide="external-link" aria-hidden="true"></i></a></div>
+    <small class="footer-note">График и наличие нужной услуги проверьте в карточке филиала или по телефону перед визитом. © 2026</small>
+  </div></footer>
+  <script src="https://unpkg.com/lucide@latest"></script><script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script><script src="script.js"></script>
+</body>
+</html>
